@@ -50,7 +50,8 @@ As a first step I set up a MySQL database on my localhost, and tried to load the
 - To forecast the incoming 6 months first I query the data to get the visitors per day and the number of restaurants which logged the data (this in response to the insight found on the previous challenge), and put it into a csv file.
 > SQL code on [challenge4.sql](https://github.com/adanttmm/DiDi_case/blob/main/challenge4.sql)
 - I load the data on a pandas dataframe to work with it in Python, and start analyzing it:
--- First I explore the data looking at the trend overtime:
+ 1. I explore the data looking at some overall statistics and the trend overtime:
+ 2. 
 
 
 
