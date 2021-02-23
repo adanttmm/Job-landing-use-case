@@ -76,9 +76,15 @@ As a first step I set up a MySQL database on my localhost, and tried to load the
 |75%	|15.000000|	168.750000|
 |max	|26.000000|	644.000000|  
 
-  I see that there's 418 days of data spaning over a 517 days period; this means there's missing data. Looking at the linechart it's clear that the missing data is between August and October 2016, so this will have to be addressed later:
+  I see that there's 418 days of data spaning over a 517 days period; this means there's missing data. Looking at the linechart it's clear that the missing data is between August and October 2016, so this will have to be addressed:
 ![linechart](https://github.com/adanttmm/DiDi_case/blob/main/linechart_1.png) 
-    *    
+
+  Benchmarking multiple interpolation methods: 
+![interpolation methods](https://github.com/adanttmm/DiDi_case/blob/main/linechart_2.png)
+
+  I ended up selecting just imputing with the mean seen until July 25th 2016, because it's the more simple, yet sensible trend
+![imputing mean](https://github.com/adanttmm/DiDi_case/blob/main/linechart_3.png)  
+  
   3. 
 
 
