@@ -5,8 +5,10 @@ As a first step I set up a MySQL database on my localhost, and tried to load the
  ----------------------------------------
  ## Q1
  - List with the top 5 restaurants with highest average visits on holidays:
+
+
  |id|avg_holiday_visits|
-|--|------------------|
+|---|------------------|
 |0a74a5408a0b8642|33.2727|
 |e053c561f32acc28|30.6364|
 |db80363d35f10926|25.2000|
