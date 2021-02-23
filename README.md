@@ -50,10 +50,11 @@ As a first step I set up a MySQL database on my localhost, and tried to load the
 - To forecast the incoming 6 months first I query the data to get the visitors per day and the number of restaurants which logged the data (this in response to the insight found on the previous challenge), and put it into a csv file.
 > SQL code on [challenge4.sql](https://github.com/adanttmm/DiDi_case/blob/main/challenge4.sql)
 - I load the data on a pandas dataframe to work with it in Python, and start analyzing it:
-\
+ \s
   1. I explore the data looking at some overall statistics and the trend overtime:
-  \
+ \s
     * This is the head of the dataset:
+
 |date|	num_rest|	num_visits|
 |---|---|---|
 |0|	2016-01-02|	1|	34|
@@ -61,8 +62,9 @@ As a first step I set up a MySQL database on my localhost, and tried to load the
 |2|	2016-01-04|	1|	7|
 |3|	2016-01-06|	3|	19|
 |4|	2016-01-07|	1|	7|
-    \   
+ \s 
     * And some basic statistics:
+    
 |statistic|num_rest	|num_visits|
 |---|---|---|
 |count|	418.000000	|418.000000|
@@ -73,7 +75,7 @@ As a first step I set up a MySQL database on my localhost, and tried to load the
 |50%	|4.500000	|68.500000|
 |75%	|15.000000|	168.750000|
 |max	|26.000000|	644.000000|  
-\
+ \s
     * I see that there's 418 days of data spaning over a 517 days period; this means there's missing data. Looking at the linechart it's clear that the missing data is between August and October 2016, so this will have to be addressed later:
 ![linechart](https://github.com/adanttmm/DiDi_case/blob/main/linechart_1.png) 
     *    
