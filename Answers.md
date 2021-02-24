@@ -133,7 +133,7 @@ There's also atypical values on Dec'16 which may correspond to christmas and new
 |f068442ebb6c246c|2017-04-28|
 |bcce1ea4350b7b72|2017-04-28|
 
-- Looking at the effect from the number of restaurants logging data, the most impactful action would be to attract new restaurants to bring new visitors to the platform; I looked at the daily average visits per restaurant per genre, and see that *Izakaya* are by much the preferred alternative, so this restaurants would be the priority, followed by *Western*, *Italian/French*, *Dining bar*, and *Japanese* which are the next in popularity.
+- Looking at the effect from the number of restaurants logging data, the next most impactful action would be to attract new restaurants to bring new visitors to the platform; I looked at the daily average visits per restaurant per genre, and see that *Izakaya* are by much the preferred alternative, so this restaurants would be the priority, followed by *Western*, *Italian/French*, *Dining bar*, and *Japanese* which are the next in popularity.
 
 |Genre|Avg. visitors per restaurant|
 |----------|------------|
