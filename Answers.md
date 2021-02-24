@@ -16,7 +16,6 @@ As a first step I set up a MySQL database on my localhost, and tried to load the
 
 > SQL code on [challenge1.sql](https://github.com/adanttmm/DiDi_case/blob/main/challenge1.sql)
  
- ----------------------------------------
  ## Challenge 2
  - The day with largest expected traffic is Saturday, which make sense to be expected:
 
@@ -32,7 +31,6 @@ As a first step I set up a MySQL database on my localhost, and tried to load the
 
 > SQL code on [challenge2.sql](https://github.com/adanttmm/DiDi_case/blob/main/challenge2.sql)
  
- ----------------------------------------
  ## Challenge 3
  - The growth week over week the last 4 weeks of data is negative, which means that there's a contraction on business driven mainly by the fact that the number of restaurants logging data decrease to only 2 the last week vs almost 30 on on previous periods:
 
@@ -45,7 +43,6 @@ As a first step I set up a MySQL database on my localhost, and tried to load the
 
 > SQL code on [challenge3.sql](https://github.com/adanttmm/DiDi_case/blob/main/challenge3.sql)
  
-----------------------------------------
  ## Challenge 4
 - To forecast the incoming 6 months first I query the data to get the visitors per day and the number of restaurants which logged the data (this in response to the insight found on the previous challenge), and put it into a csv file.
 > SQL code on [challenge4.sql](https://github.com/adanttmm/DiDi_case/blob/main/challenge4.sql)
@@ -105,7 +102,7 @@ There's also atypical values on Dec'16 which may correspond to christmas and new
 ### In the end the forecast for the next 6 months is of a total ***2,853*** visitors and an average of ***15.6*** visitors per day. 
 
 >Python notebook on [forecast notebook](https://github.com/adanttmm/DiDi_case/blob/main/DiDi%20challenge%20forecasting.ipynb)
-----------------------------------------
+
 ## Challenge 5
 
 - First I would go after the restaurants that have logged data before but stopped, prioritizing the ones that used to do better than average. This is an opportunity of 20 out of 39 restaurants which haven't logged data since Apr'17. It's important to see what can be done with this customers, since usually retaining is cheaper and more effective than bringing new ones, and looking at the average forecasted per day, and the average visits on holidays of the top restaurants, recovering just one out of this would greatly improve results:
@@ -157,7 +154,6 @@ There's also atypical values on Dec'16 which may correspond to christmas and new
 
 >Python notebook on [geolocation notebook](https://github.com/adanttmm/DiDi_case/blob/main/Geolocation%20restaurants.ipynb)
 
-----------------------------------------
 ## Challenge 6
 
 - I would join the data published by the government statistics department (INEGI) on economics by geolocation (AGEB). This data is thought to help small and medium businesses with information on socio-economic level, demographics, volume of businesses by type. Finding correlation with the restaurant performance and the zones they're in could help focus on the ones with better chances to improve, and target new restaurants on successful zones.
@@ -165,14 +161,12 @@ There's also atypical values on Dec'16 which may correspond to christmas and new
 - Here restaurants and apps usually survey customers, to get data on their products and services. This would be paramount to find opportunities for each restaurant and build personalized recommendations for the customers.
 - Payment information would be very interesting to see if the restaurants that offer different alternatives for payment, like credit cards and restaurant coupons, perform better.     
 
-----------------------------------------
 ## Challenge 7
 
 - The most clear channels would be the app stores. To estimate the cost I get the global average cost per install for the most popular devices (IOs with $0.86usd and Android $0.44usd found on [CPIs](https://www.businessofapps.com/ads/cpi/research/cost-per-install/)). This is a good starting point, and then I'd monitor the KPIs from each marketplace to get the cost, which I would then adjust to include the spent on out of home and traditional marketing to include the efforts to drive organic traffic.
 - Next I'd check the digital campaigns, which have their cost per acquisition and tools to optimize.
 - I guess that there's commercial partners that drive app downloads, and its cost may be estimated accounting for the investment the partners require, the volume of apps they drive (maybe through their websites, intranets, employees, etc.) and the direct benefit of the relationship.
 
-----------------------------------------
 ## Challenge 8
   
 
@@ -212,3 +206,4 @@ There's also atypical values on Dec'16 which may correspond to christmas and new
   -  SVM.
   -  KNN.
 
+----------------------------------------
