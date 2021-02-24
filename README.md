@@ -106,25 +106,7 @@ There's also atypical values on Dec'16 which may correspond to christmas and new
 ----------------------------------------
 ## Challenge 5
 
-- Looking at the effect from the number of restaurants logging data, the most impactful action would be to attract new restaurants to bring new visitors to the platform; I looked at the daily average visits per restaurant per genre, and see that *Izakaya* are by much the preferred alternative, so this restaurants would be the priority, followed by *Western*, *Italian/French*, *Dining bar*, and *Japanese* which are the next in popularity.
-
-|Genre|Avg. visitors per restaurant|
-|----------|------------|
-|Izakaya|52.7165|
-|Western food|29.3281|
-|Italian/French|28.5637|
-|Dining bar|26.6289|
-|Japanese food|26.1653|
-|Bar/Cocktail|13.8286|
-|Cafe/Sweets|10.2695|
-|Yakiniku/Korean food|9.6149|
-|Other|5.1758|
-
-- Also using the restaurant data I can look at the better performing zones, and focus on gathering restaurants on those geogrphies:
-
-![restaurants geolocation](https://github.com/adanttmm/DiDi_case/blob/main/map_visits.png)
-
-- Next I would go after the restaurants that have logged data before but stopped, prioritizing the ones that use to do better than average. This is an opportunity of 20 out of 39 restaurants which haven't logged data since Apr'17. It's important to see what can be done with this customers, since usually retaining is cheaper and more effective than bringing new ones:
+- First I would go after the restaurants that have logged data before but stopped, prioritizing the ones that use to do better than average. This is an opportunity of 20 out of 39 restaurants which haven't logged data since Apr'17. It's important to see what can be done with this customers, since usually retaining is cheaper and more effective than bringing new ones, and looking at the average forecasted per day, and the average visits on holidays of the top restaurants, recovering just one out of this would greatly improve results:
 
 |Restaurant ID|Last date|
 |---|--------|
@@ -168,9 +150,28 @@ There's also atypical values on Dec'16 which may correspond to christmas and new
 |1033310359ceeac1|2017-05-30|
 |3cad29d1a23209d2|2017-05-31|
 
+- Looking at the effect from the number of restaurants logging data, the most impactful action would be to attract new restaurants to bring new visitors to the platform; I looked at the daily average visits per restaurant per genre, and see that *Izakaya* are by much the preferred alternative, so this restaurants would be the priority, followed by *Western*, *Italian/French*, *Dining bar*, and *Japanese* which are the next in popularity.
+
+|Genre|Avg. visitors per restaurant|
+|----------|------------|
+|Izakaya|52.7165|
+|Western food|29.3281|
+|Italian/French|28.5637|
+|Dining bar|26.6289|
+|Japanese food|26.1653|
+|Bar/Cocktail|13.8286|
+|Cafe/Sweets|10.2695|
+|Yakiniku/Korean food|9.6149|
+|Other|5.1758|
+
+- Also using the restaurant data I can look at the better performing zones, and focus on gathering restaurants on those geogrphies:
+
+![restaurants geolocation](https://github.com/adanttmm/DiDi_case/blob/main/map_visits.png)
+
 - Lastly to help low performing restaurants, I would suggest promotional campaigns like discounts or loyalty programs to boost their sales. To increase effectivity, and ensure a good execution from the restaurants, I would set a ranking so they know how they compare vs other restaurants of the same category, and compete to get the best ranking places; depending on budget an additional benefit like a badge or trophy could be useful to motivate the owners, and showcase their ranking.
 
 >SQL code on [challenge5.sql](https://github.com/adanttmm/DiDi_case/blob/main/challenge5.sql)
+
 >Python notebook on [geolocation notebook](https://github.com/adanttmm/DiDi_case/blob/main/Geolocation%20restaurants.ipynb)
 
 ----------------------------------------
