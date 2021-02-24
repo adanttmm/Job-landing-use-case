@@ -103,6 +103,7 @@ There's also atypical values on Dec'16 which may correspond to christmas and new
 
 ### In the end the forecast for the next 6 months is of a total ***2,853*** visitors and an average of ***15.6*** visitors per day. 
 
+>Python notebook on [forecast notebook](https://github.com/adanttmm/DiDi_case/blob/main/DiDi%20challenge%20forecasting.ipynb)
 ----------------------------------------
 ## Challenge 5
 
