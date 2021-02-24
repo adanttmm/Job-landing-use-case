@@ -76,7 +76,7 @@ As a first step I set up a MySQL database on my localhost, and tried to load the
 |75%	|15.000000|	168.750000|
 |max	|26.000000|	644.000000|  
 
-  I see that there's 418 days of data spaning over a 517 days period; this means there's missing data. Looking at the linechart it's clear that the missing data is between August and October 2016, so this will have to be addressed:
+  2. I see that there's 418 days of data spaning over a 517 days period; this means there's missing data. Looking at the linechart it's clear that the missing data is between August and October 2016, so this will have to be addressed:
 ![linechart](https://github.com/adanttmm/DiDi_case/blob/main/linechart_1.png) 
 
   Benchmarking multiple interpolation methods: 
@@ -85,7 +85,26 @@ As a first step I set up a MySQL database on my localhost, and tried to load the
   I ended up selecting just imputing with the mean seen until July 25th 2016, because it's the more simple, yet sensible trend
 ![imputing mean](https://github.com/adanttmm/DiDi_case/blob/main/linechart_3.png)  
   
-  3. 
+  3. Mooving into the forecasting, first I see the seasonal decomposition of the time series that shows a clear weekly seasinality, and identify that there appears to be four periods with different behavior on the trend:
+    - Previous to Aug'16 there's a flat trend with a slight growth.
+    - From Nov'16 to Jan'17 large growth.
+    - It drops at the begining of 2017 but remains stable until May'17.
+    - Posterior to May'17 it drops again to levels from early 2016.  
+![seasonal decomposition complete](https://github.com/adanttmm/DiDi_case/blob/main/seasonal_decomposition1.png)  
+
+I chose to exclude the data previous to Nov'16, because it looks like the business from early 2016 was a complete different phenomenon, this produces a variation on the residuals which in turn could affect the forecast with heteroscedasticity. 
+Keeping the change in Jan'17 makes sense, since this could easily be explained by the usual drop in spent after the holidays.
+It appears that mid 2017 there was a challenging situation, because the drop in visitors look to big to be explainde by the same reason as the first months, so I also keep this data because there's no indication of corrupted data or an error that could impact the analysis.
+The final decomposition still shows a little increase in variation for the residuals arround January, but I already chose to keep it because is informative and relevant for the model.
+![seasonal decomposition final](https://github.com/adanttmm/DiDi_case/blob/main/seasonal_decomposition2.png) 
+
+
+
+
+
+
+
+  5.  
 
 
 
