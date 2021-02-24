@@ -85,31 +85,23 @@ As a first step I set up a MySQL database on my localhost, and tried to load the
   I ended up selecting just imputing with the mean seen until July 25th 2016, because it's the more simple, yet sensible trend
 ![imputing mean](https://github.com/adanttmm/DiDi_case/blob/main/linechart_3.png)  
   
-  3. Moving into the forecasting, first I see the seasonal decomposition of the time series that shows a clear weekly seasonality, and identify that there appears to be four periods with different behavior on the trend:
+  3. In the seasonal decomposition of the time series there's a clear weekly seasonality, and identify that there appears to be four periods with different behavior on the trend:
     - Previous to Aug'16 there's a flat trend with a slight growth.
     - From Nov'16 to Jan'17 large growth.
     - It drops at the beginning of 2017 but remains stable until May'17.
     - Posterior to May'17 it drops again to levels from early 2016.  
 ![seasonal decomposition complete](https://github.com/adanttmm/DiDi_case/blob/main/seasonal_decomposition1.png)  
 
-I chose to exclude the data previous to Nov'16, because it looks like the business from early 2016 was a complete different phenomenon, this produces a variation on the residuals which in turn could affect the forecast with heteroscedasticity. \s
-Keeping the change in Jan'17 makes sense, since this could easily be explained by the usual drop in spent after the holidays.\s
-It appears that mid 2017 there was a challenging situation, because the drop in visitors look to big to be explained by the same reason as the first months, so I also keep this data because there's no indication of corrupted data or an error that could impact the analysis.\s
-The final decomposition still shows a little increase in variation for the residuals around January, but I already chose to keep it because is informative and relevant for the model; besides it still show weekly periodicity which makes a lot of sense to restaurant traffic.\s
-![seasonal decomposition final](https://github.com/adanttmm/DiDi_case/blob/main/seasonal_decomposition2.png) 
+There's also atypical values on Dec'16 which may correspond to christmas and new year's eve; depending on the forecasting method, this are treated (Autoregressive) or not (Exponential Smoothing). First I separate train and test datasets to measure model accuracy, and after selection retrain with the whole dataset for forecasting. 
+
+  4. The final autoregressive model has a mean absolute percenatage error (MAPE) of 1.6%. It has a good performance, but the forecast turns out nonsensical so I move on to other method:
+![Autoregressive model](https://github.com/adanttmm/DiDi_case/blob/main/ARIMA%20forecast.png)  
 
 
+  5. Finally I get great performance from exponential smoothing, with MAPE of 0.81% and a much better forecast:
+![Exponential smoothing](https://github.com/adanttmm/DiDi_case/blob/main/SES%20benchmark%20final.png)
 
-
-
-
-
-
-
-
-
-  5.  
-
+### In the end the forecast for the next 6 months is of a total ***2,853*** visitors and an average of ***15.6*** visitors per day. 
 
 ----------------------------------------
 ## Challenge 5
