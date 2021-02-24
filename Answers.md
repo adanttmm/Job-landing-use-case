@@ -1,6 +1,6 @@
 # Answers to DiDi's BI challenge
 
-As a first step I set up a MySQL database on my localhost, and tried to load the csv files into it. Here I noticed that the 'restaurants_visitors' file has corrupted data on the 'visit_date' column; since there's the 'visit_datetime' column and it has complete data, the missing rows can be recovered. Once this was done the file had no problems loading into the database and I was able to star working on the challenges.
+As a first step I set up a MySQL database on my localhost, and tried to load the csv files into it. Here I noticed that the 'restaurants_visitors' file has corrupted data on the 'visit_date' column; since there's the 'visit_datetime' column and it has complete data, the missing rows can be recovered. Once this was done the file had no problems loading into the database and I was able to start working on the challenges.
 
  ----------------------------------------
  ## Challenge 1
@@ -36,7 +36,7 @@ As a first step I set up a MySQL database on my localhost, and tried to load the
  ## Challenge 3
  - The growth week over week the last 4 weeks of data is negative, which means that there's a contraction on business driven mainly by the fact that the number of restaurants logging data decrease to only 2 the last week vs almost 30 on on previous periods:
 
-|Year|Week number|Restaurants loggind data|% variation vs previous week|
+|Year|Week number|Restaurants logging data|% variation vs previous week|
 |---------------|---------------|---------------|--------------|
 |2017|22|2|-0.7619|
 |2017|21|5|-0.1923|
@@ -50,9 +50,9 @@ As a first step I set up a MySQL database on my localhost, and tried to load the
 - To forecast the incoming 6 months first I query the data to get the visitors per day and the number of restaurants which logged the data (this in response to the insight found on the previous challenge), and put it into a csv file.
 > SQL code on [challenge4.sql](https://github.com/adanttmm/DiDi_case/blob/main/challenge4.sql)
 - I load the data on a pandas dataframe to work with it in Python, and start analyzing it:
- \s
+ 
   1. I explore the data looking at some overall statistics and the trend overtime:
- \s
+ 
   This is the head of the dataset:
 
 |date|	num_rest|	num_visits|
@@ -93,9 +93,9 @@ As a first step I set up a MySQL database on my localhost, and tried to load the
   - Posterior to May'17 it drops again to levels from early 2016.  
 ![seasonal decomposition complete](https://github.com/adanttmm/DiDi_case/blob/main/seasonal_decomposition1.png)  
 
-There's also atypical values on Dec'16 which may correspond to christmas and new year's eve; depending on the forecasting method, this are treated (Autoregressive) or not (Exponential Smoothing). First I separate train and test datasets to measure model accuracy, and after selection retrain with the whole dataset for forecasting. 
+There's also atypical values on Dec'16 which may correspond to christmas and new year's eve; depending on the forecasting method, these are treated (Autoregressive) or not (Exponential Smoothing). First I separate train and test datasets to measure model accuracy, and after selection retrain with the whole dataset for forecasting. 
 
-  4. The final autoregressive model has a mean absolute percenatage error (MAPE) of 1.6%. It has a good performance, but the forecast turns out nonsensical so I move on to other method:
+  4. The final autoregressive model has a mean absolute percentage error (MAPE) of 1.6%. It has a good performance, but the forecast turns out nonsensical so I move on to other method:
 ![Autoregressive model](https://github.com/adanttmm/DiDi_case/blob/main/ARIMA%20forecast.png)  
 
 
@@ -108,7 +108,7 @@ There's also atypical values on Dec'16 which may correspond to christmas and new
 ----------------------------------------
 ## Challenge 5
 
-- First I would go after the restaurants that have logged data before but stopped, prioritizing the ones that use to do better than average. This is an opportunity of 20 out of 39 restaurants which haven't logged data since Apr'17. It's important to see what can be done with this customers, since usually retaining is cheaper and more effective than bringing new ones, and looking at the average forecasted per day, and the average visits on holidays of the top restaurants, recovering just one out of this would greatly improve results:
+- First I would go after the restaurants that have logged data before but stopped, prioritizing the ones that used to do better than average. This is an opportunity of 20 out of 39 restaurants which haven't logged data since Apr'17. It's important to see what can be done with this customers, since usually retaining is cheaper and more effective than bringing new ones, and looking at the average forecasted per day, and the average visits on holidays of the top restaurants, recovering just one out of this would greatly improve results:
 
 |Restaurant ID|Last date|
 |---|--------|
@@ -147,7 +147,7 @@ There's also atypical values on Dec'16 which may correspond to christmas and new
 |Yakiniku/Korean food|9.6149|
 |Other|5.1758|
 
-- Also using the restaurant data I can look at the better performing zones, and focus on gathering restaurants on those geogrphies:
+- Also using the restaurant data I can look at the better performing zones, and focus on gathering restaurants on those geographies:
 
 ![restaurants geolocation](https://github.com/adanttmm/DiDi_case/blob/main/map_visits.png)
 
@@ -160,15 +160,15 @@ There's also atypical values on Dec'16 which may correspond to christmas and new
 ----------------------------------------
 ## Challenge 6
 
-- I would join the data published by the government statistics department (INEGI) on ecnomics by geolocation (AGEB). This data is thought to help small and medium businesses with information on socio-economic level, demographics, volume of businesses by type. Finding correlation with the restaurant performance and the zones they're in could help focus on the ones with better chances to improve, and target new restaurants on successful zones.
-- Gathering data on past and future local holidays would be a must, because even if it's not very relevant for Japan, those particular dates could prove important to lauch campaigns that boost performance.
+- I would join the data published by the government statistics department (INEGI) on economics by geolocation (AGEB). This data is thought to help small and medium businesses with information on socio-economic level, demographics, volume of businesses by type. Finding correlation with the restaurant performance and the zones they're in could help focus on the ones with better chances to improve, and target new restaurants on successful zones.
+- Gathering data on past and future local holidays would be a must, because even if it's not very relevant for Japan, those particular dates could prove important to launch campaigns that boost performance.
 - Here restaurants and apps usually survey customers, to get data on their products and services. This would be paramount to find opportunities for each restaurant and build personalized recommendations for the customers.
 - Payment information would be very interesting to see if the restaurants that offer different alternatives for payment, like credit cards and restaurant coupons, perform better.     
 
 ----------------------------------------
 ## Challenge 7
 
-- The most clear channels would be the app stores. To estimate the cost I get the global average cost per install for the most popular devices (IOs with $0.86usd and Andriod $0.44usd found on [CPIs](https://www.businessofapps.com/ads/cpi/research/cost-per-install/)). This is a good starting point, and then I'd monitor the KPIs from each marketplace to get the cost, which I would then adjust to include the spent on out of home and traditional marketing to include the efforts to drive organic traffic.
+- The most clear channels would be the app stores. To estimate the cost I get the global average cost per install for the most popular devices (IOs with $0.86usd and Android $0.44usd found on [CPIs](https://www.businessofapps.com/ads/cpi/research/cost-per-install/)). This is a good starting point, and then I'd monitor the KPIs from each marketplace to get the cost, which I would then adjust to include the spent on out of home and traditional marketing to include the efforts to drive organic traffic.
 - Next I'd check the digital campaigns, which have their cost per acquisition and tools to optimize.
 - I guess that there's commercial partners that drive app downloads, and its cost may be estimated accounting for the investment the partners require, the volume of apps they drive (maybe through their websites, intranets, employees, etc.) and the direct benefit of the relationship.
 
