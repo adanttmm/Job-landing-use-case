@@ -86,10 +86,11 @@ As a first step I set up a MySQL database on my localhost, and tried to load the
 ![imputing mean](https://github.com/adanttmm/DiDi_case/blob/main/linechart_3.png)  
   
   3. In the seasonal decomposition of the time series there's a clear weekly seasonality, and identify that there appears to be four periods with different behavior on the trend:
-    - Previous to Aug'16 there's a flat trend with a slight growth.
-    - From Nov'16 to Jan'17 large growth.
-    - It drops at the beginning of 2017 but remains stable until May'17.
-    - Posterior to May'17 it drops again to levels from early 2016.  
+
+  - Previous to Aug'16 there's a flat trend with a slight growth.
+  - From Nov'16 to Jan'17 large growth.
+  - It drops at the beginning of 2017 but remains stable until May'17.
+  - Posterior to May'17 it drops again to levels from early 2016.  
 ![seasonal decomposition complete](https://github.com/adanttmm/DiDi_case/blob/main/seasonal_decomposition1.png)  
 
 There's also atypical values on Dec'16 which may correspond to christmas and new year's eve; depending on the forecasting method, this are treated (Autoregressive) or not (Exponential Smoothing). First I separate train and test datasets to measure model accuracy, and after selection retrain with the whole dataset for forecasting. 
