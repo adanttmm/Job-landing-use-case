@@ -1,2 +1,2 @@
-# Job landing use case for Didi
-Answers to BI challenge
+# Job landing use case
+Answers to hiring assessment
